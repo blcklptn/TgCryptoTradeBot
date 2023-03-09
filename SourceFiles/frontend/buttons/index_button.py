@@ -88,6 +88,7 @@ def generate_lottery_button():
 
 
 def generate_index_button():
+    role = "admin"
     buttons = [
         [
             InlineKeyboardButton(text='↙️ Купить', callback_data='buy'),
@@ -109,10 +110,44 @@ def generate_index_button():
             InlineKeyboardButton(text='📢 Канал', url='https://t.me/mudak'),
         ],
         [
-            InlineKeyboardButton(text='📑 Отзывы', url='https://t.me/mudak'),
+            InlineKeyboardButton(text='📑 Админ', url='https://t.me/Noimf'),
             InlineKeyboardButton(text='🆘 Оператор', url='https://t.me/blcklptn'),
         ],
         [ InlineKeyboardButton(text='ℹ️ Инфо', callback_data='info'), ]
     ]
-    keyboard = InlineKeyboardMarkup(inline_keyboard=buttons)
-    return keyboard
+    buttons_operator = [
+        [
+            InlineKeyboardButton(text='BTC / LTC', callback_data='BTC_LTC'),
+        ],
+        [
+            InlineKeyboardButton(text='Управление', callback_data='managment'),
+        ],
+        [
+            InlineKeyboardButton(text='Баланс CB ', callback_data='balance_CB'),
+            InlineKeyboardButton(text='Баланс кошелька', callback_data='balance'),
+        ]
+    ]
+    buttons_admin = [
+        [
+            InlineKeyboardButton(text='BTC / LTC', callback_data='BTC_LTC'),
+        ],
+        [
+            InlineKeyboardButton(text='Управление', callback_data='managment'),
+        ],
+        [
+            InlineKeyboardButton(text='Баланс CB ', callback_data='balance_CB'),
+            InlineKeyboardButton(text='Баланс кошелька', callback_data='balance'),
+        ],
+        [
+            InlineKeyboardButton(text='ADMIN MENU', callback_data='ADMIN_MENU'),
+        ],
+    ]
+    if role == "admin":
+        keyboard = InlineKeyboardMarkup(inline_keyboard=buttons_admin)
+        return keyboard
+    elif role == "admin":
+        keyboard = InlineKeyboardMarkup(inline_keyboard=buttons_operator)
+        return keyboard
+    else:
+        keyboard = InlineKeyboardMarkup(inline_keyboard=buttons)
+        return keyboard

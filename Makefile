@@ -9,3 +9,9 @@ install-requirements:
 
 vars:
 	export $(grep -v '^#' .env | xargs)
+
+docker:
+	docker compose --env-file .env up
+
+new_vars:
+	export $(xargs < .env)
