@@ -22,3 +22,11 @@ class Admins(Base):
     id = Column(Integer, primary_key=True, nullable=False, unique=True)
     user_id = Column(String, default=None, unique=True)
     added = Column(DateTime, default=datetime.now())
+
+
+class Operators(Base):
+    __tablename__ == 'Operators'
+
+    id = Column(Integer, primary_key=True, nullable=False, unique=True)
+    user_id = Column(String, default=None, unique=True)
+    added = Column(DateTime, default=datetime.now())
