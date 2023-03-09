@@ -10,4 +10,3 @@ class Users(Base):
     username = Column(String, default = None)
     role = Column(String, default='user')
     added = Column(DateTime, default=datetime.now())
-
