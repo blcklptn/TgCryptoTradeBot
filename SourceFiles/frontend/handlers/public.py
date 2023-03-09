@@ -6,6 +6,7 @@ from frontend.message import index_message, info_message, trade_info, balance_in
 from frontend.buttons import index_button
 from contextlib import suppress
 from aiogram.exceptions import TelegramBadRequest
+from middleware import crud
 
 router = Router()
 

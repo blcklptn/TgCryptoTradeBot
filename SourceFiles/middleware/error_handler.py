@@ -1,18 +1,8 @@
 
-
-
-def error_handler(func: object):
-    async def wrapper(*args, **kwargs):
-        func()
+def handle_crud_error(func: object) -> object:
+    async def wrapper(*args, **kwargs) -> object:
+        try:
+            return await func(*args, **kwargs)
+        except Exception as ex:
+            print('ex:', ex)
     return wrapper
-
-
-
-def er_(func):
-    try:
-        res = func()
-        return res
-    except Exception as ex:
-        print(ex)
-    
-
