@@ -26,7 +26,7 @@ class Admins(Base):
 
 
 class Operators(Base):
-    __tablename__ == 'Operators'
+    __tablename__ = 'Operators'
 
     id = Column(Integer, primary_key=True, nullable=False, unique=True)
     user_id = Column(String, default=None, unique=True)
