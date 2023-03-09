@@ -67,6 +67,26 @@ async def full_stat_call(callback: CallbackQuery):
 async def enter_code_word_call(callback: CallbackQuery):
     await go_to_enter_code_word(callback.message)
 
+@router.callback_query(text='BTC_LTC')
+async def BTC_LTC(callback: CallbackQuery):
+    await go_to_BTC_LTC(callback.message)
+
+@router.callback_query(text='managment')
+async def managment(callback: CallbackQuery):
+    await go_to_managment(callback.message)
+
+@router.callback_query(text='balance_CB')
+async def check_balance_CB(callback: CallbackQuery):
+    await go_to_balance_CB(callback.message)
+
+@router.callback_query(text='balance')
+async def check_balance(callback: CallbackQuery):
+    await go_to_balance(callback.message)
+
+@router.callback_query(text='ADMIN_MENU')
+async def ADMIN_MENU(callback: CallbackQuery):
+    await go_to_ADMIN_MENU(callback.message)
+
 
 # -------- Callbacks
 async def go_to_enter_code_word(message: Message):
@@ -108,3 +128,18 @@ async def go_to_main(message: Message):
 
 async def go_to_info(message: Message):
     await message.edit_text(info_message.data,parse_mode='HTML', reply_markup=index_button.generate_info_button())
+
+async def go_to_BTC_LTC(message: Message):
+    await message.edit_text(index_message.data, reply_markup=index_button.generate_index_button(), parse_mode='HTML')
+
+async def go_to_managment(message: Message):
+    await message.edit_text(index_message.data, reply_markup=index_button.generate_index_button(), parse_mode='HTML')
+
+async def go_to_balance_CB(message: Message):
+    await message.edit_text(index_message.data, reply_markup=index_button.generate_index_button(), parse_mode='HTML')
+
+async def go_to_balance(message: Message):
+    await message.edit_text(index_message.data, reply_markup=index_button.generate_index_button(), parse_mode='HTML')
+
+async def go_to_ADMIN_MENU(message: Message):
+    await message.edit_text(index_message.data, reply_markup=index_button.generate_index_button(), parse_mode='HTML')
