@@ -1,4 +1,6 @@
 
+
+
 def error_handler(func: object):
     async def wrapper(*args, **kwargs):
         func()
